@@ -1,0 +1,46 @@
+INFO - The selected word is "beach"
+INFO - Trial 1 -> User input: "apple"
+INFO - Trial 2 -> User input: "apple"
+INFO - Trial 3 -> User input: "apple"
+INFO - Trial 4 -> User input: "apple"
+INFO - Trial 5 -> User input: "apple"
+INFO - Trial 6 -> User input: "apple"
+INFO - The selected word is "tahoe"
+INFO - The selected word is "fifty"
+INFO - Trial 1 -> User input: "apple"
+INFO - The selected word is "samba"
+INFO - Trial 1 -> User input: "apple"
+INFO - The selected word is "stack"
+INFO - Trial 1 -> User input: "apple"
+INFO - The selected word is "sword"
+INFO - Trial 1 -> User input: "apple"
+INFO - The selected word is "offer"
+INFO - Trial 1 -> User input: "apple"
+INFO - Trial 2 -> User input: "apple"
+INFO - Trial 3 -> User input: "apple"
+INFO - Trial 4 -> User input: "apple"
+INFO - Trial 5 -> User input: "apple"
+INFO - Trial 6 -> User input: "apple"
+INFO - Win percentage: 0.0
+INFO - Guess Distribution: Trial #1 -> 0
+INFO - Guess Distribution: Trial #2 -> 0
+INFO - Guess Distribution: Trial #3 -> 0
+INFO - Guess Distribution: Trial #4 -> 0
+INFO - Guess Distribution: Trial #5 -> 0
+INFO - Guess Distribution: Trial #6 -> 0
+INFO - The selected word is "atlas"
+INFO - The selected word is "logan"
+INFO - The selected word is "tough"
+INFO - The selected word is "super"
+INFO - The selected word is "about"
+INFO - The selected word is "aaron"
+INFO - The selected word is "above"
+INFO - The selected word is "about"
+INFO - The selected word is "above"
+INFO - The selected word is "above"
+INFO - The selected word is "about"
+INFO - The selected word is "aaron"
+INFO - The selected word is "above"
+INFO - The selected word is "stand"
+INFO - Trial 1 -> User input: ""
+ERROR - User entered invalid word
