@@ -2,7 +2,7 @@ import HW03_Yash_Gilda_dictionary as dic
 from HW03_Yash_Gilda_wordle import Wordle as wrd
 import HW03_Yash_Gilda_logger as logger
 from HW_08_Yash_Gilda_Wordle_Helper import Helper as helper
-# Begin
+# Begin code
 class UI:
     gamesPlayed = 0
     gamesWon = 0
