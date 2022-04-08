@@ -7,7 +7,7 @@ from HW03_Aman_Pawar_wordle import Main as wordle
 from HW03_Aman_Pawar_occurence import Occurence as occurence
 
 class WordleTest(unittest.TestCase):
-    # def __init__(self):
+    # def __init__(self):    
     #     self.d = dictionary.Dictionary()
     #     self.u = ui.Ui()
     #     self.w = wordle.Main()

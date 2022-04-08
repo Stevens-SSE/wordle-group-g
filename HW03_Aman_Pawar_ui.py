@@ -16,7 +16,7 @@ class Ui:
             while self.letters_5(self.my_word) or self.only_chars(self.my_word) or self.prev_guesses(self.my_word, copy_words):
                 self.my_word = input("Enter guess #" + str(x+1) + ":")
 
-            #Calling dictionary functions
+            # Calling dictionary functions
             while self.di.is_correct_dict_word(self.my_word):
                 self.my_word = input("Enter guess #" + str(x+1) + ":")
 
