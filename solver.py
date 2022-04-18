@@ -10,8 +10,8 @@ if __name__ == "__main__": # Plays the game
     attempts = 6
 
     # Generated from results of each round
-    good=[]
-    bad=[]
+    goodLetters=[]
+    badLetters=[]
     first=""
     second=""
     third=""
@@ -49,16 +49,16 @@ if __name__ == "__main__": # Plays the game
                 fifth = guess[i]
 
             elif result[i] == "'": # Checks good letters
-                good.append(guess[i])
+                goodLetters.append(guess[i])
 
         for i in range(5): # Checks bad letters
-            if result[i] == '"' and guess[i] not in good and guess[i] != first and guess[i] != second and guess[i] != third and guess[i] != fourth and guess[i] != fifth:
-                bad.append(guess[i])
+            if result[i] == '"' and guess[i] not in goodLetters and guess[i] != first and guess[i] != second and guess[i] != third and guess[i] != fourth and guess[i] != fifth:
+                badLetters.append(guess[i])
                 
         attempts = attempts - 1
         guesslist.append(guess)
         print() 
-        guess = helper.printTop(guesslist,good,bad,first,second,third,fourth,fifth) # Gets guess from helper function
+        guess = helper.printTop(guesslist,goodLetters,badLetters,first,second,third,fourth,fifth) # Gets guess from helper function
         
 
     else: # If solver runs out of attempts

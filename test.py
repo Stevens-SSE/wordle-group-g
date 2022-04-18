@@ -42,6 +42,13 @@ class testWordle(unittest.TestCase):
         print(result)
         self.assertTrue(result,"LOSS")
 
+    def test_wordle7(self): # Case where user loses running out of moves
+        solution = ['A', 'D', 'I', 'E', 'U']
+        tests = ["JOINS","EMAIL","DEPTH","VEGAS","BONES","HOTEL"]
+        result = wordle.runWordle(solution,tests)
+        print(result)
+        self.assertTrue(result,"LOSS")
+
 
 if __name__ == "__main__":
     unittest.main()

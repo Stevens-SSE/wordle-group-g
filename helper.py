@@ -42,111 +42,79 @@ if __name__ == "__main__": # Runs if user uses helper
     print()
     print("Please enter the good letters or enter for no known good letters")
     while True: # Takes good letters
-        good = input()
-        if len(good)>5:
-            print("You cannot have more than 5 good letters")
+        goodLetters = input()
+        if len(goodLetters)>5:
+            print("You cannot have more than 5 goodLetters letters")
             continue
-        if not (good.isalpha() or good == ""):
+        if not (goodLetters.isalpha() or goodLetters == ""):
             print("You entered non alphabetic character")
             continue
         break
-    good = good.upper()
-    good = list(set(list(good)))
+    goodLetters = goodLetters.upper()
+    goodLetters = list(set(list(goodLetters)))
     
     print("Please enter bad letters or enter for no known bad letters")
     while True: # Takes bad letters
-        bad = input()
-        if not (bad.isalpha() or bad == ""):
+        badLetters = input()
+        if not (badLetters.isalpha() or badLetters == ""):
             print("You entered non alphabetic character")
             continue
         break
-    bad = bad.upper()
-    bad = list(set(list(bad)))
+    badLetters = badLetters.upper()
+    badLetters = list(set(list(badLetters)))
 
-    # Takes all 5 letters if known
-    print("Please enter character at position 1, enter if it is not known")    
+  #  Takes all 5 letters if known
+    print("Please enter any known characters in the word, put in a space for unknown letters or just press enter to move on.")
     while True:
-        first = input()
-        if len(first) > 1:
-            print("Please enter a single character")
+        temp = input()
+        if not (temp.isalpha() or temp == "" or len(temp) == 5):
+            print("Please give proper inputs")
             continue
-        if not (first.isalpha() or first == ""):
-            print("Please enter an alphabet or space")
         break
-    first = first.upper()
 
-    print("Please enter character at position 2, enter if it is not known")    
-    while True:
-        second = input()
-        if len(second) > 1:
-            print("Please enter a single character")
-            continue
-        if not (second.isalpha() or second == ""):
-            print("Please enter an alphabet or space")
-        break
-    second = second.upper()
+    if temp == "":
+        first = " "
+        second = " "
+        third = " "
+        fourth = " "
+        fifth = " "
+    else:
+        temp = list(temp)
+        first = temp[0].upper()
+        second = temp[1].upper()
+        third = temp[2].upper()
+        fourth = temp[3].upper()
+        fifth = temp[4].upper()
 
-    print("Please enter character at position 3, enter if it is not known")    
-    while True:
-        third = input()
-        if len(third) > 1:
-            print("Please enter a single character")
-            continue
-        if not (third.isalpha() or third == ""):
-            print("Please enter an alphabet or space")
-        break
-    third = third.upper()
-
-    print("Please enter character at position 4, enter if it is not known")    
-    while True:
-        fourth = input()
-        if len(fourth) > 1:
-            print("Please enter a single character")
-            continue
-        if not (fourth.isalpha() or fourth == ""):
-            print("Please enter an alphabet or space")
-        break
-    fourth = fourth.upper()
-
-    print("Please enter character at position 5, enter if it is not known")    
-    while True:
-        fifth = input()
-        if len(fifth) > 1:
-            print("Please enter a single character")
-            continue
-        if not (fifth.isalpha() or fifth == ""):
-            print("Please enter an alphabet or space")
-        break
-    fifth = fifth.upper()
 
     # generate wordlist and result linked list
     wordRank = pd.read_csv("wordRank.csv")
     wordList = list(wordRank["Word"])
     result = LinkedList()
-    for i in wordList: # Generate result list based on good bad and known letters
+    for i in wordList: # Generate result list based on goodLetters badLetters and known letters
         word = list(i)
         flag = 1
-        if len(good) > 0:
-            for j in good:
+        if len(goodLetters) > 0:
+            for j in goodLetters:
                 if j not in word:
                     flag = 0
-        if len(bad) > 0:
-            for j in bad:
+        if len(badLetters) > 0:
+            for j in badLetters:
                 if j in word:
                     flag = 0
-        if len(first) > 0:
+        if first != " ":
             if word[0] != first:
                 flag = 0
-        if len(second) > 0:
+        if second != " ":
             if word[1] != second:
                 flag = 0
-        if len(third) > 0:
+        if third != " ":
             if word[2] != third:
                 flag = 0
-        if len(fourth) > 0:
+        if fourth != " ":
             if word[3] != fourth:
                 flag = 0
-        if len(fifth) > 0:
+        if fifth != " ":
             if word[4] != fifth:
                 flag = 0
         if flag == 1:
@@ -156,10 +124,10 @@ if __name__ == "__main__": # Runs if user uses helper
     result.print50() # Print first 50 letters
 
 
-def printTop(prev="",good=[],bad=[],first="",second="",third="",fourth="",fifth=""): # Used by solver to play the game returns only first topmost word
-    good = list(set(list(good)))
+def printTop(prev="",goodLetters=[],badLetters=[],first="",second="",third="",fourth="",fifth=""): # Used by solver to play the game returns only first topmost word
+    goodLetters = list(set(list(goodLetters)))
 
-    bad = list(set(list(bad)))
+    badLetters = list(set(list(badLetters)))
 
     first = first.upper()
     second = second.upper()
@@ -173,12 +141,12 @@ def printTop(prev="",good=[],bad=[],first="",second="",third="",fourth="",fifth=
     for i in wordList:
         word = list(i)
         flag = 1
-        if len(good) > 0:
-            for j in good:
+        if len(goodLetters) > 0:
+            for j in goodLetters:
                 if j not in word:
                     flag = 0
-        if len(bad) > 0:
-            for j in bad:
+        if len(badLetters) > 0:
+            for j in badLetters:
                 if j in word:
                     flag = 0
         if len(first) > 0:
